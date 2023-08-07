@@ -4,7 +4,6 @@ require_once 'db/conn.php';
 // Consulta para seleccionar todos los registros de la tabla Viajeros
 $sql = "SELECT * FROM Viajeros";
 $result = $conn->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +19,8 @@ $result = $conn->query($sql);
 
 <body>
     <div class="content">
+        <h1>Viajeros</h1>
+        <a class="btn btn-outline-primary" href="registroviajeros.php">Nuevo viajero</a>
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
@@ -30,6 +31,7 @@ $result = $conn->query($sql);
                     <th>Telefono</th>
                     <th>Fecha Nacimiento</th>
                     <th>Direccion</th>
+                    <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,20 +40,23 @@ $result = $conn->query($sql);
                     // Imprimir los datos de cada fila
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td> ID: " . $row["id"] . "</td>";
-                        echo "<td>Nombre: " . $row["Nombre"] . "</td>";
-                        echo "<td>Apellido: " . $row["Apellido"] . "</td>";
-                        echo "<td>Correo: " . $row["Correo"] . "</td>";
-                        echo "<td>Teléfono: " . $row["Telefono"] . "</td>";
-                        echo "<td>Fecha de Nacimiento: " . $row["FechaNacimiento"] . "</td>";
-                        echo "<td>Dirección: " . $row["Direccion"] . "</td>";
+                        echo "<td>" . $row["id"] . "</td>";
+                        echo "<td>" . $row["Nombre"] . "</td>";
+                        echo "<td>" . $row["Apellido"] . "</td>";
+                        echo "<td>" . $row["Correo"] . "</td>";
+                        echo "<td>" . $row["Telefono"] . "</td>";
+                        echo "<td>" . $row["FechaNacimiento"] . "</td>";
+                        echo "<td>" . $row["Direccion"] . "</td>";
+                        echo '<td><div class="d-grid gap-2 d-md-block">
+                        <a class="btn btn-outline-info" type="button">Editar</a>
+                        <a class="btn btn-outline-success" href="viajes.php?id=' . $row["id"] . '">Viajes</a>
+                        </div></td>';
                         echo "</tr>";
                     }
                 } else {
                     echo "No se encontraron registros.";
                 }
                 ?>
-
             </tbody>
         </table>
     </div>

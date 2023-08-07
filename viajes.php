@@ -1,3 +1,16 @@
+<?php
+require_once 'db/conn.php';
+
+if (isset($_GET['id'])) {
+    $idViajero = $_GET['id'];
+    // Consulta para seleccionar todos los registros de la tabla Viajeros
+    $sql = "SELECT * FROM Viajes WHERE IdViajero = $idViajero";
+    $result = $conn->query($sql);
+} else {
+    echo "ID de viajero no especificada en la URL.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +24,8 @@
 
 <body>
     <div class="content">
+        <h1>Viajes Realizados</h1>
+        <a class="btn btn-outline-primary" href="registroviajes.php">Nuevo Viaje</a>
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
@@ -22,11 +37,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Juan</td>
-                    <td>25</td>
-                    <td>México</td>
-                </tr>
+                <?php
+                if ($result->num_rows > 0) {
+                    // Imprimir los datos de cada fila
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["Id"] . "</td>";
+                        echo "<td>" . $row["Destino"] . "</td>";
+                        echo "<td>" . $row["FechaSalida"] . "</td>";
+                        echo "<td>" . $row["FechaRegreso"] . "</td>";
+                        echo "<td>" . $row["FechaRegistro"] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "No se encontraron registros.";
+                }
+                ?>
             </tbody>
         </table>
     </div>
