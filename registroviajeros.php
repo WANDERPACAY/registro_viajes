@@ -10,31 +10,31 @@
 </head>
 
 <body>
-<form class="content" method="get" action="viajeros.php">
+<form class="content" method="post" action="newviajero.php">
     <h1>Registro Viajeros</h1>
     <div class="input-group">
         <span class="input-group-text">Nombre</span>
-        <input type="text" aria-label="Nombre" class="form-control">
+        <input type="text" aria-label="Nombre" class="form-control name" name="nombre">
     </div>
     <div class="input-group">
         <span class="input-group-text">Apellido</span>
-        <input type="text" aria-label="Apellido" class="form-control">
+        <input type="text" aria-label="Apellido" class="form-control" name="apellido">
     </div>
     <div class="input-group">
         <span class="input-group-text">Correo</span>
-        <input type="text" aria-label="Correo" class="form-control">
+        <input type="email" aria-label="Correo" class="form-control" name="correo">
     </div>
     <div class="input-group">
         <span class="input-group-text">Telefono</span>
-        <input type="text" aria-label="Telefono" class="form-control">
+        <input type="number" aria-label="Telefono" class="form-control" name="telefono">
     </div>
     <div class="input-group">
         <span class="input-group-text">Fecha Nacimiento</span>
-        <input type="text" aria-label="Fecha Nacimiento" class="form-control">
+        <input type="date" aria-label="Fecha Nacimiento" class="form-control" name="fecha_nacimiento">
     </div>
     <div class="input-group">
         <span class="input-group-text">Direccion</span>
-        <input type="text" aria-label="Direccion" class="form-control">
+        <input type="text" aria-label="Direccion" class="form-control" name="direccion">
     </div>
     <div class="d-grid d-md-flex justify-content-md-end">
         <input class="btn btn-outline-primary" type="submit" value="Registrar">

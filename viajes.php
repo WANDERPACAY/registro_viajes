@@ -26,6 +26,7 @@ if (isset($_GET['id'])) {
     <div class="content">
         <h1>Viajes Realizados</h1>
         <a class="btn btn-outline-primary" href="registroviajes.php">Nuevo Viaje</a>
+        <a class="btn btn-outline-warning" href="viajeros.php">Regresar</a>
         <table class="table table-dark table-striped">
             <thead>
                 <tr>

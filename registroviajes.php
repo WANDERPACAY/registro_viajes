@@ -10,19 +10,19 @@
 </head>
 
 <body>
-    <form class="content" method="get" action="viajes.php">
+    <form class="content" method="post" action="newviaje.php">
         <h1>Registro Viajes</h1>
         <div class="input-group">
             <span class="input-group-text">Destino</span>
-            <input type="text" aria-label="Nombre" class="form-control">
+            <input type="text" aria-label="Nombre" class="form-control" name= "destino">
         </div>
         <div class="input-group">
-            <span class="input-group-text">Fecha/Hora de salida</span>
-            <input type="text" aria-label="Apellido" class="form-control">
+            <span class="input-group-text">Fecha de salida</span>
+            <input type="date" aria-label="Apellido" class="form-control" name="fechasalida">
         </div>
         <div class="input-group">
-            <span class="input-group-text">Fecha/Hora de regreso</span>
-            <input type="text" aria-label="Correo" class="form-control">
+            <span class="input-group-text">Fecha de regreso</span>
+            <input type="date" aria-label="Correo" class="form-control" name="fecharegreso">
         </div>
         <div class="d-grid d-md-flex justify-content-md-end">
             <input class="btn btn-outline-primary" type="submit" value="Registrar">

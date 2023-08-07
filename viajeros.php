@@ -48,7 +48,6 @@ $result = $conn->query($sql);
                         echo "<td>" . $row["FechaNacimiento"] . "</td>";
                         echo "<td>" . $row["Direccion"] . "</td>";
                         echo '<td><div class="d-grid gap-2 d-md-block">
-                        <a class="btn btn-outline-info" type="button">Editar</a>
                         <a class="btn btn-outline-success" href="viajes.php?id=' . $row["id"] . '">Viajes</a>
                         </div></td>';
                         echo "</tr>";
