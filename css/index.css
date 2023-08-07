@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+    color: #fff;
+}
+
+.content {
+    text-align: center;
+    width: 80%;
+    max-width: 1100px;
+}
+
+.input-group {
+    margin: 10px 0;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    border-color: #444;
+    color: #fff;
+}
+
+.input-group-text input {
+    margin: 0;
+}
+
+.form-control {
+    background-color: #444;
+    border-color: #555;
+    color: #fff;
+}
